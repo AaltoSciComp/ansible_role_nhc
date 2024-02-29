@@ -77,7 +77,7 @@
 #   * || check_hw_physmem_free 1MB
 
 # Same, but for swap space.
-   * || check_hw_swap_free {{ nhc_hw_swap_free }}
+#   * || check_hw_swap_free {{ nhc_hw_swap_free }}
 
 # Check for some sort of free memory of either type.
    * || check_hw_mem_free {{ nhc_hw_mem_free }}
@@ -162,7 +162,7 @@
 ### Process checks
 ###
 # Everybody needs sshd running, right?  But don't use -r (restart)!
-   * || check_ps_service -u root -S sshd
+   * || check_ps_service -u root -S sshd:
 
 # The cron daemon is another useful critter...
 #   * || check_ps_service -r crond

@@ -30,11 +30,11 @@ check_reboot_slurm() {
 for a in $STATELINE; do
 	LABEL=`echo $a | cut -d = -f 1`
 	PARAMETER=`echo $a | cut -d = -f 2`
-	
-	if [ $LABEL = "Reason" ]; then 
+
+	if [ $LABEL = "Reason" ]; then
 		REASON=$PARAMETER
 	fi
-	if [ $LABEL = "State" ]; then 
+	if [ $LABEL = "State" ]; then
 		STATE=$PARAMETER
 	fi
 done
